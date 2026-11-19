@@ -15,8 +15,8 @@ class Client(Base):
     address: Mapped[str] = mapped_column(String(255))
     birthdate: Mapped[Date] = mapped_column(Date)
 
-    borrowings_history: list
-    reserved_books: list
+    borrowings_history: list = []
+    reserved_books: list = []
 
     def __init__(
         self,

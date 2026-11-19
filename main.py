@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 
-from classes import base, books, clients, librarians
+from classes import base, books, borrowings, clients, librarians
 
 if __name__ == "__main__":
     engine = create_engine("sqlite:///library.db")
