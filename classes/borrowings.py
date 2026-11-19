@@ -2,7 +2,7 @@ from datetime import date
 
 
 class Borrowing:
-    borrowed_book = []
+    borrowed_book: list
     # borrow_date = date(0, 0, 0)
     # return_date = date(0, 0, 0)
 
