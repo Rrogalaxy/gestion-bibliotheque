@@ -1,6 +1,13 @@
-from sqlalchemy.orm import Mapped, mapped_column
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    # only evaluated by the type checker, never at runtime
+    from classes.books.book import Book
+
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from classes.base import Base
+from classes.books.book_catergory import book_category
 
 
 class Category(Base):
@@ -9,3 +16,6 @@ class Category(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(unique=True)
+    books: Mapped[list["Book"]] = relationship(
+        secondary=book_category, back_populates="categories"
+    )
