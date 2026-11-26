@@ -11,3 +11,7 @@ class Librarian(Base):
     firstname: Mapped[str] = mapped_column(String(30))
     email: Mapped[str] = mapped_column(String(255))
     password: Mapped[str] = mapped_column(String(255))
+
+
+def add():
+    pass
