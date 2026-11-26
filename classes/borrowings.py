@@ -1,4 +1,5 @@
 from sqlalchemy import Column, ForeignKey, Table
+from sqlalchemy.types import Date
 
 from classes.base import Base
 
@@ -7,4 +8,5 @@ borrowings: Table = Table(
     Base.metadata,
     Column("book_id", ForeignKey("books.id"), primary_key=True),
     Column("client_id", ForeignKey("clients.id"), primary_key=True),
+    Column("borrowed_at", Date),
 )
